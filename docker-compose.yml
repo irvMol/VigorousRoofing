@@ -1,15 +1,15 @@
 services:
   eleventy-dev:
     build:
-      context: ./eleventy
+      context: .
       dockerfile: Dockerfile
     volumes:
-      - ./eleventy:/app
+      - .:/app
     working_dir: /app
     # SIMPLIFIED COMMAND:
     command: sh -c "npm run build:css && npx @11ty/eleventy --serve"
     ports:
-      - "80:8080"
+      - "8080:8080"
     networks:
       - web
 
