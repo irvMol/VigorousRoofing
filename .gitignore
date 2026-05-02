@@ -1,15 +1,29 @@
 # Dependencies
 node_modules/
+.pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
 .DS_Store
 
 # Build output
 _site/
+dist/
+.cache/
+.11ty-cache/
 
 # Environment secrets
 .env
+.env.local
+.env.*.local
 
-# Docker logs
+# Docker
 *.log
 docker-compose.override.yml
 
+# IDE / Editor
+.vscode/
+.idea/
+
+# Project Management
 TODO.md

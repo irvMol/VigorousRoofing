@@ -1,0 +1,1 @@
+This project is the official web presence for Vigorous Roofing and Construction, a specialized roofing and construction business serving the Dallas-Fort Worth area. It is built as a high-performance static site using Eleventy (11ty), Tailwind CSS v4, and is deployed via Docker with Caddy as the production web server.

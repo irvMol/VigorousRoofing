@@ -1,3 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config "../../../tailwind.config.js";
+
+@theme {
+  --color-brand-grey: #3d3e3f;
+  --color-brand-red: #c20e0e;
+}
