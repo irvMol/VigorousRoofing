@@ -12,7 +12,7 @@ dist/
 .cache/
 .11ty-cache/
 
-.github/
+# .github/
 
 # Environment secrets
 .env
