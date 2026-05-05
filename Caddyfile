@@ -10,6 +10,6 @@ encode gzip
 
 # Redirect www to non-www (optional but recommended)
 
-www.vigorousroofing.com {
-redir https://vigorousroofing.com{uri}
-}
+# www.vigorousroofing.com {
+# redir https://vigorousroofing.com{uri}
+# }
