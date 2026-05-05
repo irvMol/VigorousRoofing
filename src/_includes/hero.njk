@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+<header class="relative bg-brand-dark-grey min-h-[70vh] flex flex-col items-center justify-center text-white p-6">
+    <div class="max-w-xl text-center">
+        <div class="mb-8 flex justify-center">
+            <img src="/assets/images/logo/vigorous-logo-clear.png" alt="Vigorous Roofing Logo" 
+                 class="h-auto w-full border-b-4 border-brand-red pb-4">
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">{{ hero_title }}</h1>
+        <p class="text-lg text-gray-300 mb-8">{{ hero_subtitle }}</p>
+        <a href="{{ cta_link }}" 
+           class="inline-block bg-brand-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-lg">
+            {{ hero_cta_text }}
+        </a>
+    </div>
+</header>
+
+<div class="w-full">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-20 py-16">
+        {{ content | safe }}
+    </div>
+</div>
