@@ -9,35 +9,64 @@ permalink: /
 ---
 
 <!-- 1. Services Section -->
-<div class="text-center mb-16">
+<div class="text-center mb-16" id="services">
 <h2 class="text-4xl font-extrabold text-white tracking-tight">Our Expert Services</h2>
 <div class="h-1.5 w-24 bg-brand-red mx-auto mt-6 rounded-full"></div>
 <p class="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">From minor repairs to full scale storm restoration, we provide invaluable experience and durable results.</p>
 </div>
-
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-<div class="group p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2">
+<a href="/services/residential/" class="block group h-full">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2">
 <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
 <span class="text-2xl">🏠</span>
 </div>
 <h3 class="text-xl font-bold mb-3">Residential Roofing</h3>
 <p class="text-gray-600 text-sm leading-relaxed">Specializing in shingle, tile, and metal roofing solutions tailored for Texas weather.</p>
 </div>
-
-<div class="group p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2">
+</a>
+<a href="/services/commercial/" class="block group h-full">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
 <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
 <span class="text-2xl">🏢</span>
 </div>
 <h3 class="text-xl font-bold mb-3">Commercial Services</h3>
 <p class="text-gray-600 text-sm leading-relaxed">Durable TPO and flat roof systems designed to protect your business and investment.</p>
 </div>
-
-<div class="group p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2">
+</a>
+<a href="/services/storm-damage/" class="block group h-full">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
 <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
 <span class="text-2xl">⛈️</span>
 </div>
 <h3 class="text-xl font-bold mb-3">Storm Restoration</h3>
 <p class="text-gray-600 text-sm leading-relaxed">Expert hail and wind damage assessments.</p>
+</div>
+</a>
+</div>
+<!-- Construction section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+<div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
+<span class="text-2xl">🏠</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Remodeling</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Specializing in bathroom and kitchen remodels.</p>
+</div>
+
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2">
+<div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
+<span class="text-2xl">🏢</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Commercial Construction</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Protect your business and investment.</p>
+</div>
+
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2">
+<div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
+<span class="text-2xl">⛈️</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Storm Restoration</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Flooding and Window installation</p>
 </div>
 </div>
 
