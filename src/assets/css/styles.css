@@ -1,8 +1,11 @@
 @import 'tailwindcss';
 
-@config "../../../tailwind.config.js";
+@source "../../**/*.njk";
+@source "../../**/*.md";
+@source "../../**/*.html";
 
 @theme {
   --color-brand-grey: #3d3e3f;
   --color-brand-red: #c20e0e;
+  --color-brand-dark-grey: #2a2b2a;
 }
