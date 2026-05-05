@@ -1,22 +1,17 @@
 services:
-  eleventy-dev:
+  eleventy:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - .:/app
+      - /app/node_modules
     working_dir: /app
-    # Add -D to install dependencies if they're missing on the server
-    command: sh -c "npm install && npm run build:css && npx @11ty/eleventy"
     networks:
       - web
 
   caddy:
     image: caddy:latest
-    restart: always
-    ports:
-      - "80:80"
-      - "443:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./_site:/srv/vigorous/_site
@@ -27,7 +22,6 @@ services:
 
 networks:
   web:
-    driver: bridge
 
 volumes:
   caddy_data:

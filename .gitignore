@@ -3,7 +3,6 @@ node_modules/
 .pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
 .DS_Store
 
 # Build output
@@ -22,6 +21,10 @@ dist/
 # Docker
 *.log
 docker-compose.override.yml
+
+# Playwright
+playwright-report/
+test-results/
 
 # IDE / Editor
 .vscode/
