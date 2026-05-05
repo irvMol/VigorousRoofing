@@ -1,15 +1,13 @@
-vigorousroofing.com {
-
-root \* {$SITE_ROOT}
-file_server
-encode gzip
+:80 {
+    root * /srv/vigorous/_site
+    file_server
+    encode gzip
 
     try_files {path} {path}.html {path}/
-
 }
 
 # Redirect www to non-www (optional but recommended)
 
-# www.vigorousroofing.com {
-# redir https://vigorousroofing.com{uri}
-# }
+ www.vigorousroofing.com {
+ redir https://vigorousroofing.com{uri}
+ }
