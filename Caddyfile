@@ -1,5 +1,4 @@
-vigorousroofing.com, www.vigorousroofing.com {
-
+:80 {
     root * /srv/vigorous/_site
     file_server
     encode gzip
