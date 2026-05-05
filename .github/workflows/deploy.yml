@@ -3,27 +3,14 @@ name: Deploy
 on:
   push:
     branches:
-      - main # Only deploy when pushing to main (optional but safer)
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-
-      - name: Copy project files to server
-        uses: appleboy/scp-action@v1.0.0
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSHKEY }}
-          port: ${{ secrets.PORT }}
-          source: '.' # Adjust if you want to exclude .git or workflows
-          target: '/srv/vigorous'
-          # rm: true  # Optional: clean target before copying
-
-      - name: Run Docker Compose on server
+      - name: Deploy to server via SSH
         uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.HOST }}
@@ -32,5 +19,16 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /srv/vigorous
-            docker compose -f docker-compose.yml pull
-            docker compose -f docker-compose.yml up -d --build
+
+            # Pull latest code
+            git fetch origin
+            git reset --hard origin/main
+
+            # Stop containers
+            docker compose -f docker-compose.yml -f docker-compose.prod.yml down
+
+            # Build Eleventy (IMPORTANT)
+            docker compose run --rm eleventy sh -c "npm install && npm run build:css && npx @11ty/eleventy"
+
+            # Start full stack
+            docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
