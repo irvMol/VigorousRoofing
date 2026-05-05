@@ -1,4 +1,4 @@
-vigorousroofing.com, caddy:80, localhost:80 {
+vigorousroofing.com {
 
 root \* {$SITE_ROOT}
 file_server
