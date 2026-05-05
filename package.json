@@ -3,12 +3,14 @@
     "version": "1.0.0",
     "description": "A simple Eleventy website.",
     "main": "index.md",
-    "scripts": {
-        "build:css": "npx postcss src/assets/css/styles.css -o src/assets/css/output.css",
-        "start": "npm run build:css && npx @11ty/eleventy --serve --port=8080 --host=0.0.0.0",
-        "watch:css": "postcss src/assets/css/styles.css -o src/assets/css/output.css --watch",
-        "build": "npx @11ty/eleventy",
-        "test": "echo \"Error: no test specified\" && exit 1"
+
+
+        "scripts": {
+    "build:css": "postcss src/assets/css/styles.css -o src/assets/css/output.css",
+    "start": "npm run build:css && npx @11ty/eleventy --serve --port=8080 --host=0.0.0.0",
+    "watch:css": "postcss src/assets/css/styles.css -o src/assets/css/output.css --watch",
+    "build": "NODE_ENV=production npm run build:css && npx @11ty/eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",
