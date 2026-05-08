@@ -13,10 +13,12 @@ services:
   caddy:
     image: caddy:latest
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./Caddyfile.dev:/etc/caddy/Caddyfile
       - ./_site:/srv/vigorous/_site
       - caddy_data:/data
       - caddy_config:/config
+    ports:
+      - "80:80"
     networks:
       - web
 

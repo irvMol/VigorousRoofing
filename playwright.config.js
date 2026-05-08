@@ -6,7 +6,7 @@ module.exports = defineConfig({
   reporter: 'html',
   use: {
     // Crucial: Use the service name 'web' instead of localhost inside Docker
-    baseURL: 'http://caddy:80',
+    baseURL: 'http://host.docker.internal:80',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },

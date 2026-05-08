@@ -1,0 +1,7 @@
+vigorousroofing.com, www.vigorousroofing.com {
+    root * /srv/vigorous/_site
+    file_server
+    encode gzip
+
+    try_files {path} {path}.html {path}/
+}

@@ -1,18 +1,9 @@
 services:
-  eleventy:
-    command: sh -c "npm install && npm run build:css && npx @11ty/eleventy"
-
   caddy:
+    volumes:
+      - ./Caddyfile.prod:/etc/caddy/Caddyfile
     ports:
-      - "80:80"
       - "443:443"
 
-  tests:
-    profiles: ["test"]
-    image: mcr.microsoft.com/playwright:v1.43.0-jammy
-    volumes:
-      - .:/work
-    working_dir: /work
-    command: sh -c "npx wait-on http://caddy:80 && npx playwright test"
-    depends_on:
-      - caddy
+  eleventy:
+    command: sh -c "npm install && npm run build:css && npx @11ty/eleventy"

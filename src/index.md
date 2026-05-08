@@ -1,6 +1,6 @@
 ---
 layout: hero.njk
-title: Home
+title: Vigorous Roofing
 hero_title: Quality Above All Else
 hero_subtitle: Expert roofing and storm restoration services for homeowners and businesses across the Dallas-Fort Worth Metroplex.
 hero_cta_text: Get Your Free Estimate
