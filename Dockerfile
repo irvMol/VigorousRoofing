@@ -1,25 +1,27 @@
-# Use a Node.js image
-
-FROM node:20-alpine
-
+# Use Node.js Debian image
+FROM node:20-bookworm
 
 # Set working directory
-
 WORKDIR /app
 
+# Install dependencies required for sharp
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3 \
+    libc6-dev \
+    libvips-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy package files and install dependencies
-
+# Copy package files
 COPY package.json package-lock.json* ./
 
+# Install node dependencies
 RUN npm install
 
-
-# Copy the rest of the project
-
+# Copy project files
 COPY . .
 
-
-# Build Tailwind CSS (output.css)
-
+# Build Tailwind CSS
 RUN npm run build:css
+
+EXPOSE 8080

@@ -4,8 +4,7 @@ layout: base.njk
 <header class="relative bg-brand-dark-grey min-h-[70vh] flex flex-col items-center justify-center text-white p-6">
     <div class="max-w-xl text-center">
         <div class="mb-8 flex justify-center">
-            <img src="/assets/images/logo/vigorous-logo-clear.png" alt="Vigorous Roofing Logo" 
-                 class="h-auto w-full border-b-4 border-brand-red pb-4">
+{% image "assets/images/logo/vigorous-logo-clear.png", "Vigorous Roofing Logo", "(min-width: 30em) 50vw, 100vw" %}
         </div>
         <h1 class="text-4xl md:text-6xl font-bold mb-4">{{ hero_title }}</h1>
         <p class="text-lg text-gray-300 mb-8">{{ hero_subtitle }}</p>

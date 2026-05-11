@@ -1,7 +1,34 @@
+const Image = require('@11ty/eleventy-img');
+const path = require('path');
+
 module.exports = function (eleventyConfig) {
-  // Since 'input' is 'src', just use 'assets'
-  eleventyConfig.addPassthroughCopy('assets');
-  eleventyConfig.addWatchTarget('assets/');
+  // 1. Keep your existing passthrough for non-processed assets
+  eleventyConfig.addPassthroughCopy('src/assets');
+
+  // 2. Add the Responsive Image Shortcode
+  eleventyConfig.addNunjucksAsyncShortcode(
+    'image',
+    async function (src, alt, sizes = '100vw') {
+      // Correct the path since your input is 'src'
+      let fullSrc = path.join(__dirname, 'src', src);
+
+      let metadata = await Image(fullSrc, {
+        widths: [400, 800, 1200],
+        formats: ['webp', 'jpeg'],
+        outputDir: './_site/img/', // Put processed images in the output folder
+        urlPath: '/img/',
+      });
+
+      let imageAttributes = {
+        alt,
+        sizes,
+        loading: 'lazy',
+        decoding: 'async',
+      };
+
+      return Image.generateHTML(metadata, imageAttributes);
+    },
+  );
 
   return {
     dir: {

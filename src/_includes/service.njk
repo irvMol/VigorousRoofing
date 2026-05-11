@@ -45,14 +45,40 @@ templateEngineOverride: njk
       <p style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.7rem; color: #c20e0e; font-weight: 700; margin-bottom: 1rem;">Trusted Roofing Solutions</p>
       <h2 style="font-size: 2.25rem; font-weight: 900; color: #2f2f2f; line-height: 1.2; margin-bottom: 1rem;">Professional <span style="color: #c20e0e;">{{ title }}</span></h2>
       <div style="width: 4rem; height: 4px; background: #c20e0e; border-radius: 9999px; margin-bottom: 2rem;"></div>
-      <div class="prose prose-lg max-w-none prose-headings:font-black prose-headings:text-[#2f2f2f] prose-p:text-gray-600 prose-p:leading-relaxed prose-ul:my-4 prose-li:text-gray-600 prose-li:marker:text-brand-red prose-strong:text-[#2f2f2f]">
+      <div class="prose prose-lg prose-gray max-w-none
+        text-gray-700
+        prose-headings:text-[#2f2f2f]
+        prose-headings:font-black
+        prose-p:text-gray-700
+        prose-p:leading-relaxed
+        prose-li:text-gray-700
+        prose-li:marker:text-brand-red
+      ">
         {{ content | safe }}
       </div>
+
     </div>
     <div>
-      <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.12); background: #e5e7eb; min-height: 360px; display: flex; align-items: center; justify-content: center;">
-        {% if serviceImage %}<img src="{{ serviceImage }}" alt="{{ title }} in Dallas-Fort Worth TX by Vigorous Roofing" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">{% else %}<span style="color: #9ca3af; font-size: 0.9rem;">Service Image</span>{% endif %}
-      </div>
+<div class="rounded-2xl overflow-hidden shadow-2xl bg-gray-200 min-h-[360px] flex items-center justify-center">
+
+  {% if serviceImage %}
+
+    {% image
+      serviceImage,
+      title + " in Dallas-Fort Worth TX by Vigorous Roofing",
+      "(max-width: 768px) 100vw, 50vw",
+      "w-full h-full object-cover"
+    %}
+
+  {% else %}
+
+    <span class="text-gray-400 text-sm">
+      Service Image
+    </span>
+
+  {% endif %}
+
+</div>
       <div style="margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: #e5e7eb; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
         <div style="background: white; padding: 1.25rem; text-align: center;">
           <p style="font-size: 1.5rem; font-weight: 900; color: #c20e0e;">10+</p>
