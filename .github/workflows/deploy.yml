@@ -30,8 +30,8 @@ jobs:
             #clean up builder cache
             docker builder prune -f
 
-            # # Build Eleventy (IMPORTANT for site generation)
-             docker compose run --rm eleventy npx @11ty/eleventy
+            # # Build Eleventy (IMPORTANT)
+             docker compose run --rm eleventy sh -c "npm install && npm run build:css && npx @11ty/eleventy"
 
             # Start full stack
             docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
