@@ -2,145 +2,188 @@
 layout: base.njk
 templateEngineOverride: njk
 ---
+
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#2f2f2f] text-white" style="min-height: 460px;">
-  {% if heroImage %}<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ heroImage }}');"></div><div class="absolute inset-0 bg-black/65"></div>{% endif %}
-  <div class="relative z-10 w-full max-w-5xl mx-auto px-6 pt-16 pb-20">
-    <nav aria-label="Breadcrumb" class="mb-8">
-      <ol class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-white/40">
-        <li><a href="/" class="hover:text-brand-red transition-colors">Home</a></li>
-        <li class="text-white/20">/</li>
-        <li><a href="/services/" class="hover:text-brand-red transition-colors">Services</a></li>
-        <li class="text-white/20">/</li>
-        <li class="text-brand-red">{{ title }}</li>
-      </ol>
-    </nav>
-    <p class="uppercase tracking-[0.2em] text-sm text-brand-red font-semibold mb-3">Roofing Services — Dallas Fort Worth</p>
-    <h1 class="text-4xl md:text-6xl font-black leading-tight mb-5">{{ title }}</h1>
-    <p class="text-lg text-gray-200 leading-relaxed mb-10" style="max-width: 580px;">{{ description }}</p>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-      <a href="/contact/" style="display: inline-flex; align-items: center; justify-content: center; background-color: #c20e0e; color: white; font-weight: 700; padding: 1rem 2rem; border-radius: 9999px; text-decoration: none; transition: background 0.2s;">Get a Free Estimate</a>
-      <a href="tel:2147087370" style="display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.35); color: white; font-weight: 700; padding: 1rem 2rem; border-radius: 9999px; text-decoration: none; transition: background 0.2s;">(214) 708-7370</a>
-    </div>
-  </div>
+<section class="relative overflow-hidden bg-[#2f2f2f] text-white min-h-[460px]">
+{% if heroImage %}
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ heroImage }}');"></div>
+<div class="absolute inset-0 bg-black/65"></div>
+{% endif %}
+<div class="relative z-10 w-full max-w-5xl mx-auto px-6 pt-16 pb-20">
+<nav aria-label="Breadcrumb" class="mb-8">
+<ol class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-white/40">
+<li><a href="/" class="hover:text-brand-red transition-colors">Home</a></li>
+<li class="text-white/20">/</li>
+<li><a href="/services/" class="hover:text-brand-red transition-colors">Services</a></li>
+<li class="text-white/20">/</li>
+<li class="text-brand-red">{{ title }}</li>
+</ol>
+</nav>
+<p class="uppercase tracking-[0.12em] md:tracking-[0.2em] text-xs md:text-sm text-brand-red font-semibold mb-3 leading-relaxed">
+Roofing Services — Dallas Fort Worth
+</p>
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-5">
+{{ title }}
+</h1>
+<p class="text-base sm:text-lg text-gray-200 leading-relaxed mb-10 max-w-[580px]">
+{{ description }}
+</p>
+<div class="flex flex-col sm:flex-row gap-4 flex-wrap">
+<a href="/contact/" class="inline-flex items-center justify-center bg-brand-red text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-lg hover:bg-red-700">
+Get a Free Estimate
+</a>
+<a href="tel:2147087370" class="inline-flex items-center justify-center border border-white/35 text-white font-bold py-4 px-8 rounded-full transition duration-300">
+(214) 708-7370
+</a>
+</div>
+</div>
 </section>
 
 <!-- TRUST STRIP -->
-<div style="background: #1a1a1a; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08);">
-  <div style="max-width: 1152px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.5rem 2rem; font-size: 0.875rem; font-weight: 600; color: white;">
-    <span>✓ Licensed &amp; Insured</span>
-    <span style="color: rgba(255,255,255,0.2);">|</span>
-    <span>✓ Free Estimates</span>
-    <span style="color: rgba(255,255,255,0.2);">|</span>
-    <span>✓ Quality Workmanship</span>
-    <span style="color: rgba(255,255,255,0.2);">|</span>
-    <span>✓ Serving All of DFW</span>
-  </div>
+<div class="bg-[#1a1a1a] border-y border-white/10">
+<div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-sm font-semibold text-white text-center">
+<span>✓ Licensed &amp; Insured</span>
+<span class="text-white/20 hidden sm:inline">|</span>
+<span>✓ Free Estimates</span>
+<span class="text-white/20 hidden sm:inline">|</span>
+<span>✓ Quality Workmanship</span>
+<span class="text-white/20 hidden sm:inline">|</span>
+<span>✓ Serving All of DFW</span>
+</div>
 </div>
 
 <!-- MAIN CONTENT -->
-<section style="background: #f5f5f5; padding: 5rem 0;">
-  <div style="max-width: 1152px; margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
-    <div>
-      <p style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.7rem; color: #c20e0e; font-weight: 700; margin-bottom: 1rem;">Trusted Roofing Solutions</p>
-      <h2 style="font-size: 2.25rem; font-weight: 900; color: #2f2f2f; line-height: 1.2; margin-bottom: 1rem;">Professional <span style="color: #c20e0e;">{{ title }}</span></h2>
-      <div style="width: 4rem; height: 4px; background: #c20e0e; border-radius: 9999px; margin-bottom: 2rem;"></div>
-      <div class="prose prose-lg prose-gray max-w-none
-        text-gray-700
-        prose-headings:text-[#2f2f2f]
-        prose-headings:font-black
-        prose-p:text-gray-700
-        prose-p:leading-relaxed
-        prose-li:text-gray-700
-        prose-li:marker:text-brand-red
-      ">
-        {{ content | safe }}
-      </div>
-
-    </div>
-    <div>
-<div class="rounded-2xl overflow-hidden shadow-2xl bg-gray-200 min-h-[360px] flex items-center justify-center">
-
-  {% if serviceImage %}
-
-    {% image
-      serviceImage,
-      title + " in Dallas-Fort Worth TX by Vigorous Roofing",
-      "(max-width: 768px) 100vw, 50vw",
-      "w-full h-full object-cover"
-    %}
-
-  {% else %}
-
-    <span class="text-gray-400 text-sm">
-      Service Image
-    </span>
-
-  {% endif %}
-
+<section class="bg-[#f5f5f5] py-20">
+<div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+<div>
+<p class="uppercase tracking-[0.2em] text-[0.7rem] text-brand-red font-bold mb-4">
+Trusted Roofing Solutions
+</p>
+<h2 class="text-4xl font-black text-[#2f2f2f] leading-tight mb-4">
+Professional <span class="text-brand-red">{{ title }}</span>
+</h2>
+<div class="w-16 h-1 bg-brand-red rounded-full mb-8"></div>
+<div class="prose prose-base md:prose-lg prose-gray max-w-none text-gray-700 prose-headings:text-[#2f2f2f] prose-headings:font-black prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-li:marker:text-brand-red">
+{{ content | safe }}
 </div>
-      <div style="margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: #e5e7eb; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
-        <div style="background: white; padding: 1.25rem; text-align: center;">
-          <p style="font-size: 1.5rem; font-weight: 900; color: #c20e0e;">10+</p>
-          <p style="font-size: 0.65rem; color: #6b7280; margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">Years in DFW</p>
-        </div>
-        <div style="background: white; padding: 1.25rem; text-align: center;">
-          <p style="font-size: 1.5rem; font-weight: 900; color: #c20e0e;">500+</p>
-          <p style="font-size: 0.65rem; color: #6b7280; margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">Jobs Done</p>
-        </div>
-        <div style="background: white; padding: 1.25rem; text-align: center;">
-          <p style="font-size: 1.5rem; font-weight: 900; color: #c20e0e;">100%</p>
-          <p style="font-size: 0.65rem; color: #6b7280; margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">Licensed</p>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+<div>
+<div class="rounded-2xl overflow-hidden shadow-2xl bg-gray-200 min-h-[360px] flex items-center justify-center">
+{% if serviceImage %}
+{% image
+serviceImage,
+title + " in Dallas-Fort Worth TX by Vigorous Roofing",
+"(max-width: 768px) 100vw, 50vw",
+"w-full h-full object-cover"
+%}
+{% else %}
+<span class="text-gray-400 text-sm">
+Service Image
+</span>
+{% endif %}
+</div>
+<div class="mt-6 grid grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden shadow-md">
+<div class="bg-white p-4 text-center">
+<p class="text-2xl font-black text-brand-red">10+</p>
+<p class="text-[0.65rem] text-gray-500 mt-1 uppercase tracking-wide">
+Years in DFW
+</p>
+</div>
+<div class="bg-white p-4 text-center">
+<p class="text-2xl font-black text-brand-red">500+</p>
+<p class="text-[0.65rem] text-gray-500 mt-1 uppercase tracking-wide">
+Jobs Done
+</p>
+</div>
+<div class="bg-white p-4 text-center">
+<p class="text-2xl font-black text-brand-red">100%</p>
+<p class="text-[0.65rem] text-gray-500 mt-1 uppercase tracking-wide">
+Licensed
+</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- WHY US -->
-<section style="background: white; padding: 5rem 0; border-top: 1px solid #f0f0f0;">
-  <div style="max-width: 1152px; margin: 0 auto; padding: 0 1.5rem;">
-    <div style="text-align: center; margin-bottom: 3.5rem;">
-      <p style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.7rem; color: #c20e0e; font-weight: 700; margin-bottom: 0.75rem;">Our Promise</p>
-      <h2 style="font-size: 2rem; font-weight: 900; color: #2f2f2f; margin-bottom: 0.75rem;">Why Choose Vigorous Roofing</h2>
-      <p style="color: #6b7280; max-width: 480px; margin: 0 auto; font-size: 0.95rem;">Dependable workmanship across Dallas, Fort Worth, and surrounding areas.</p>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-      <div style="padding: 2rem; border-radius: 1rem; border: 1px solid #f0f0f0; transition: all 0.3s;">
-        <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background: rgba(194,14,14,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" style="width: 1.25rem; height: 1.25rem; color: #c20e0e;" fill="none" viewBox="0 0 24 24" stroke="#c20e0e"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        </div>
-        <h3 style="font-weight: 900; font-size: 1.1rem; color: #2f2f2f; margin-bottom: 0.5rem;">Experienced Team</h3>
-        <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.6;">Skilled professionals focused on long-lasting results — every job, every time.</p>
-      </div>
-      <div style="padding: 2rem; border-radius: 1rem; border: 1px solid #f0f0f0; transition: all 0.3s;">
-        <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background: rgba(194,14,14,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="#c20e0e"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-        </div>
-        <h3 style="font-weight: 900; font-size: 1.1rem; color: #2f2f2f; margin-bottom: 0.5rem;">Quality Materials</h3>
-        <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.6;">Durable products built to withstand Texas hail, heat, and heavy rain.</p>
-      </div>
-      <div style="padding: 2rem; border-radius: 1rem; border: 1px solid #f0f0f0; transition: all 0.3s;">
-        <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background: rgba(194,14,14,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="#c20e0e"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        </div>
-        <h3 style="font-weight: 900; font-size: 1.1rem; color: #2f2f2f; margin-bottom: 0.5rem;">Honest Communication</h3>
-        <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.6;">Clear estimates and responsive service from first call to final inspection.</p>
-      </div>
-    </div>
-  </div>
+<section class="bg-white py-20 border-t border-gray-100">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-14">
+<p class="uppercase tracking-[0.15em] text-[0.7rem] text-brand-red font-bold mb-3">
+Our Promise
+</p>
+<h2 class="text-3xl md:text-4xl font-black text-[#2f2f2f] mb-3">
+Why Choose Vigorous Roofing
+</h2>
+<p class="text-gray-500 max-w-[480px] mx-auto text-sm md:text-base">
+Dependable workmanship across Dallas, Fort Worth, and surrounding areas.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="p-8 rounded-2xl border border-gray-100 transition-all duration-300">
+<div class="w-11 h-11 rounded-xl bg-brand-red/10 flex items-center justify-center mb-5">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+</svg>
+</div>
+<h3 class="font-black text-xl text-[#2f2f2f] mb-2">
+Experienced Team
+</h3>
+<p class="text-gray-500 text-sm leading-relaxed">
+Skilled professionals focused on long-lasting results — every job, every time.
+</p>
+</div>
+<div class="p-8 rounded-2xl border border-gray-100 transition-all duration-300">
+<div class="w-11 h-11 rounded-xl bg-brand-red/10 flex items-center justify-center mb-5">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+</svg>
+</div>
+<h3 class="font-black text-xl text-[#2f2f2f] mb-2">
+Quality Materials
+</h3>
+<p class="text-gray-500 text-sm leading-relaxed">
+Durable products built to withstand Texas hail, heat, and heavy rain.
+</p>
+</div>
+<div class="p-8 rounded-2xl border border-gray-100 transition-all duration-300">
+<div class="w-11 h-11 rounded-xl bg-brand-red/10 flex items-center justify-center mb-5">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+</svg>
+</div>
+<h3 class="font-black text-xl text-[#2f2f2f] mb-2">
+Honest Communication
+</h3>
+<p class="text-gray-500 text-sm leading-relaxed">
+Clear estimates and responsive service from first call to final inspection.
+</p>
+</div>
+</div>
+</div>
 </section>
 
 <!-- CTA -->
-<section style="background: #c20e0e; color: white; padding: 5rem 0; position: relative; overflow: hidden;">
-  <div style="position: absolute; inset: 0; opacity: 0.08; background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 12px 12px;"></div>
-  <div style="position: relative; max-width: 800px; margin: 0 auto; padding: 0 1.5rem; text-align: center;">
-    <p style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.7rem; color: rgba(255,255,255,0.6); font-weight: 700; margin-bottom: 1rem;">Dallas–Fort Worth</p>
-    <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 1.25rem; line-height: 1.15;">Need {{ title }}?</h2>
-    <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.6; margin-bottom: 2.5rem;">Contact Vigorous Roofing today for a free inspection and no-obligation estimate.</p>
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="/contact/" style="display: inline-flex; align-items: center; background: white; color: #c20e0e; font-weight: 900; padding: 1rem 2.5rem; border-radius: 9999px; text-decoration: none; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">Request a Free Estimate</a>
-      <a href="tel:2147087370" style="display: inline-flex; align-items: center; border: 2px solid rgba(255,255,255,0.5); color: white; font-weight: 700; padding: 1rem 2.5rem; border-radius: 9999px; text-decoration: none;">(214) 708-7370</a>
-    </div>
-  </div>
+<section class="bg-brand-red text-white py-20 relative overflow-hidden">
+<div class="absolute inset-0 opacity-[0.08]" style="background-image: repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%); background-size: 12px 12px;"></div>
+<div class="relative max-w-4xl mx-auto px-6 text-center">
+<p class="uppercase tracking-[0.15em] text-[0.7rem] text-white/60 font-bold mb-4">
+Dallas–Fort Worth
+</p>
+<h2 class="text-4xl md:text-5xl font-black leading-tight mb-5">
+Need {{ title }}?
+</h2>
+<p class="text-base md:text-lg text-white/85 max-w-[480px] mx-auto leading-relaxed mb-10">
+Contact Vigorous Roofing today for a free inspection and no-obligation estimate.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="/contact/" class="inline-flex items-center justify-center bg-white text-brand-red font-black py-4 px-8 rounded-full shadow-xl">
+Request a Free Estimate
+</a>
+<a href="tel:2147087370" class="inline-flex items-center justify-center border-2 border-white/50 text-white font-bold py-4 px-8 rounded-full">
+(214) 708-7370
+</a>
+</div>
+</div>
 </section>
