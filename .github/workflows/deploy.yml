@@ -1,14 +1,11 @@
 name: Deploy
-
 on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Deploy to server via SSH
         uses: appleboy/ssh-action@v1.2.2
@@ -24,14 +21,21 @@ jobs:
             git fetch origin
             git reset --hard origin/main
 
-            # Stop containers
+            # Bring everything down cleanly
             docker compose -f docker-compose.yml -f docker-compose.prod.yml down
 
-            #clean up builder cache
+            # Clean
             docker builder prune -f
 
-            # # Build Eleventy (IMPORTANT)
-             docker compose run --rm eleventy sh -c "npm install && npm run build:css && npx @11ty/eleventy"
+             # Build into the named volume
+            docker compose -f docker-compose.yml -f docker-compose.prod.yml run --rm eleventy \
+            sh -c "npm install && npm run build:css && npx @11ty/eleventy"
 
-            # Start full stack
+            # Verify _site was actually populated before starting Caddy
+            echo "=== Build output check ==="
+            find _site/assets/images | head -20
+            echo "=== Total files in _site ==="
+            find _site | wc -l
+
+            # Start full stack — Caddy now reads the freshly built _site
             docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build

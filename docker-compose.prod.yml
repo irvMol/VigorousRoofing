@@ -2,8 +2,12 @@ services:
   caddy:
     volumes:
       - ./Caddyfile.prod:/etc/caddy/Caddyfile
+      - site_output:/srv/vigorous/_site    # read from same named volume
     ports:
       - "443:443"
 
   eleventy:
-    command: sh -c "npm install && npm run build:css && npx @11ty/eleventy"
+    command: echo "build handled by CI"    # prod doesn't run eleventy as a service
+
+volumes:
+  site_output:

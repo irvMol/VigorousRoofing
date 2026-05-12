@@ -6,6 +6,7 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+      - site_output:/app/_site    # write built site here
     working_dir: /app
     networks:
       - web
@@ -14,7 +15,7 @@ services:
     image: caddy:latest
     volumes:
       - ./Caddyfile.dev:/etc/caddy/Caddyfile
-      - ./_site:/srv/vigorous/_site
+      - site_output:/srv/vigorous/_site    # read from same named volume
       - caddy_data:/data
       - caddy_config:/config
     ports:
@@ -28,3 +29,4 @@ networks:
 volumes:
   caddy_data:
   caddy_config:
+  site_output:
