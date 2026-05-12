@@ -16,18 +16,19 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /srv/vigorous
-
-            # Pull latest code
             git fetch origin
             git reset --hard origin/main
 
             # Bring everything down cleanly
             docker compose -f docker-compose.yml -f docker-compose.prod.yml down
-
-            # Clean
+            docker volume rm vigorous_site_output || true
             docker builder prune -f
 
-             # Build into the named volume
+             # Build into the named volume and wipe eleventy-img cache
+
+            docker compose -f docker-compose.yml -f docker-compose.prod.yml run --rm eleventy \
+            sh -c "rm -rf /app/_site/img && rm -rf /app/.cache"
+
             docker compose -f docker-compose.yml -f docker-compose.prod.yml run --rm eleventy \
             sh -c "npm install && npm run build:css && npx @11ty/eleventy"
 
