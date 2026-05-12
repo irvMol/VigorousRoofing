@@ -7,7 +7,7 @@ services:
       - "443:443"
 
   eleventy:
-    command: echo "build handled by CI"    # prod doesn't run eleventy as a service
+    command: echo "build handled by CI" 
 
 volumes:
   site_output:

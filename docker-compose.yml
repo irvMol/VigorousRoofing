@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/app
-      - /app/node_modules
+      - node_modules:/app/node_modules
       - site_output:/app/_site    # write built site here
     working_dir: /app
     networks:
@@ -27,6 +27,7 @@ networks:
   web:
 
 volumes:
+  node_modules:
   caddy_data:
   caddy_config:
   site_output:
