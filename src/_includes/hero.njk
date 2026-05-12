@@ -1,22 +1,41 @@
 ---
 layout: base.njk
 ---
-<header class="relative bg-brand-dark-grey min-h-[70vh] flex flex-col items-center justify-center text-white p-6">
-    <div class="max-w-xl text-center">
-        <div class="mb-8 flex justify-center">
-{% image "assets/images/logo/vigorous-logo-clear.png", "Vigorous Roofing Logo", "(min-width: 30em) 50vw, 100vw" %}
-        </div>
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">{{ hero_title }}</h1>
-        <p class="text-lg text-gray-300 mb-8">{{ hero_subtitle }}</p>
-        <a href="{{ cta_link }}" 
-           class="inline-block bg-brand-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-lg">
-            {{ hero_cta_text }}
-        </a>
-    </div>
+<header class="relative overflow-hidden bg-brand-dark-grey text-white min-h-[70vh] flex items-center">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-brand-red blur-3xl"></div>
+</div>
+
+<div class="relative z-10 w-full max-w-6xl mx-auto px-6 py-20 md:py-28">
+<div class="max-w-3xl mx-auto text-center">
+<div class="mb-10 flex justify-center">
+<div class="w-full max-w-[220px] md:max-w-[320px]">
+{% image
+  "/assets/images/logo/vigorous-logo-clear.png",
+  "Vigorous Roofing Logo",
+  "(max-width: 768px) 220px, 320px",
+  "w-full h-auto"
+%}
+</div>
+</div>
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6">
+{{ hero_title }}
+</h1>
+<p class="max-w-xl mx-auto text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed mb-10 px-2">
+{{ hero_subtitle }}
+</p>
+<a
+href="{{ cta_link }}"
+class="inline-flex items-center justify-center bg-brand-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-xl hover:scale-[1.02]"
+>
+{{ hero_cta_text }}
+</a>
+</div>
+</div>
 </header>
 
-<div class="w-full">
-    <div class="max-w-[1440px] mx-auto px-4 md:px-20 py-16">
-        {{ content | safe }}
-    </div>
+<div class="w-full overflow-x-hidden">
+<div class="max-w-[1440px] mx-auto px-4 md:px-10 lg:px-16 py-16 md:py-20">
+{{ content | safe }}
+</div>
 </div>
