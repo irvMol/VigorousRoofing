@@ -5,6 +5,9 @@ yarn-debug.log*
 yarn-error.log*
 .DS_Store
 
+# Local development inputs
+/src/assets/no-commit-assets
+
 # Build output
 _site/
 dist/
