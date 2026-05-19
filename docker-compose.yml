@@ -28,7 +28,7 @@ services:
     image: ramank775/netlify-cms-github-oauth-provider:latest
     environment:
       NODE_ENV: production
-      ORIGIN: https://vigorousroofing.com
+      ORIGINS: https://vigorousroofing.com
       GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID}
       GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET}
     networks:
