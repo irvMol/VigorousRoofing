@@ -25,7 +25,7 @@ services:
       - web
 
   oauth:
-    image: ghcr.io/vencax/netlify-cms-github-oauth-provider:latest
+    image: pandvan/netlify-cms-github-oauth:latest
     environment:
       NODE_ENV: production
       ORIGIN: https://vigorousroofing.com
