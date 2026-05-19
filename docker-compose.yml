@@ -25,7 +25,7 @@ services:
       - web
 
   oauth:
-    image: ramank775/netlify-cms-github-oauth:latest
+    image: ramank775/netlify-cms-github-oauth-provider:latest
     environment:
       NODE_ENV: production
       ORIGIN: https://vigorousroofing.com
