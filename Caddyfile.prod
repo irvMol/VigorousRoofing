@@ -4,4 +4,6 @@ vigorousroofing.com, www.vigorousroofing.com {
     encode gzip
 
     try_files {path} {path}.html {path}/
+
+    reverse_proxy /api/auth/* oauth:3000
 }

@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = function (eleventyConfig) {
   // 1. Keep your existing passthrough for non-processed assets
   eleventyConfig.addPassthroughCopy('src/assets');
+  eleventyConfig.addPassthroughCopy('src/admin');
 
   // 2. Add the Responsive Image Shortcode
   eleventyConfig.addNunjucksAsyncShortcode(
