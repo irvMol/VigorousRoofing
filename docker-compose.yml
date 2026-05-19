@@ -25,10 +25,12 @@ services:
       - web
 
   oauth:
-    image: ramank775/netlify-cms-github-oauth-provider:latest
+    build:
+      context: ./oauth
+      dockerfile: Dockerfile.oauth
     environment:
       NODE_ENV: production
-      ORIGINS: https://vigorousroofing.com
+      ORIGIN: https://vigorousroofing.com
       GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID}
       GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET}
     networks:
