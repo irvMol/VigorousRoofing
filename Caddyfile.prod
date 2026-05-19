@@ -1,9 +1,13 @@
 vigorousroofing.com, www.vigorousroofing.com {
     root * /srv/vigorous/_site
-    file_server
     encode gzip
 
-    try_files {path} {path}.html {path}/
+    handle /api/auth* {
+        reverse_proxy oauth:3000
+    }
 
-    reverse_proxy /api/auth/* oauth:3000
+    handle {
+        try_files {path} {path}.html {path}/
+        file_server
+    }
 }
