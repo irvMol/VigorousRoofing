@@ -32,3 +32,4 @@ volumes:
   caddy_data:
   caddy_config:
   site_output:
+  eleventy_cache:
