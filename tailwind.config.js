@@ -5,5 +5,5 @@ module.exports = {
     './src/_layouts/**/*.{njk,html}',
   ],
 
-  safelist: ['flex', 'hidden', 'opacity-0', 'opacity-100'],
+  safelist: ['fixed', 'flex', 'hidden', 'opacity-0', 'opacity-100'],
 };
