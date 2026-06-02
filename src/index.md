@@ -53,7 +53,7 @@ permalink: /
 <p class="text-gray-600 text-sm leading-relaxed">Specializing in bathroom and kitchen remodels.</p>
 </div>
 
-<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
 <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
 <span class="text-2xl">🏢</span>
 </div>
@@ -61,7 +61,7 @@ permalink: /
 <p class="text-gray-600 text-sm leading-relaxed">Protect your business and investment.</p>
 </div>
 
-<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
 <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
 <span class="text-2xl">⛈️</span>
 </div>
