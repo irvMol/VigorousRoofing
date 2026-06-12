@@ -16,7 +16,7 @@ permalink: /
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
 <a href="/services/residential/" class="block group h-full">
-<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-gray-50 text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2">
 <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
 <span class="text-2xl">🏠</span>
 </div>
@@ -25,7 +25,7 @@ permalink: /
 </div>
 </a>
 <a href="/services/commercial/" class="block group h-full">
-<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-gray-50 text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
 <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
 <span class="text-2xl">🏢</span>
 </div>
@@ -34,7 +34,7 @@ permalink: /
 </div>
 </a>
 <a href="/services/storm-damage/" class="block group h-full">
-<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-gray-50 text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
 <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
 <span class="text-2xl">⛈️</span>
 </div>
@@ -45,29 +45,33 @@ permalink: /
 </div>
 <!-- Construction section -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+<a href="/services/remodeling/" class="block group h-full">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-gray-50 text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
 <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
 <span class="text-2xl">🏠</span>
 </div>
-<h3 class="text-xl font-bold mb-3">Remodeling</h3>
-<p class="text-gray-600 text-sm leading-relaxed">Specializing in bathroom and kitchen remodels.</p>
+<h3 class="text-xl font-bold mb-3">Remodeling & Flooring</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Specializing in full-scale home remodels.</p>
 </div>
-
-<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+</a>
+<a href="/services/fencing/" class="block group h-full">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-gray-50 text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
 <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
 <span class="text-2xl">🏢</span>
 </div>
-<h3 class="text-xl font-bold mb-3">Commercial Construction</h3>
-<p class="text-gray-600 text-sm leading-relaxed">Protect your business and investment.</p>
+<h3 class="text-xl font-bold mb-3">Fencing</h3>
+<p class="text-gray-600 text-sm leading-relaxed"> Installation, replacement, and teardown services.</p>
 </div>
-
-<div class="group h-full p-10 border border-white/10 rounded-2xl bg-white text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+</a>
+<a href="/services/concrete/" class="block group h-full">
+<div class="group h-full p-10 border border-white/10 rounded-2xl bg-gray-50 text-[#3d3e3f] text-center transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
 <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
 <span class="text-2xl">⛈️</span>
 </div>
-<h3 class="text-xl font-bold mb-3">Storm Restoration</h3>
-<p class="text-gray-600 text-sm leading-relaxed">Flooding and Window installation</p>
+<h3 class="text-xl font-bold mb-3">Concrete and asphalt</h3>
+<p class="text-gray-600 text-sm leading-relaxed"> Driveways, patios, walkways, concrete pads, and repair services for residential and commercial properties.</p>
 </div>
+</a>
 </div>
 
 <!-- 2. Conversion Section -->
@@ -75,14 +79,14 @@ permalink: /
 <section class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-stretch">
 
   <!-- Estimate Card -->
-  <div class="bg-white p-12 rounded-3xl text-black shadow-2xl flex flex-col justify-center">
+  <div class="bg-gray-50 p-12 rounded-3xl text-black shadow-2xl flex flex-col justify-center">
     <h2 class="text-3xl font-black mb-4 text-gray-900 uppercase tracking-tighter">
       Quick Estimate
     </h2>
     <p class="text-gray-500 mb-8">
       Call us for an estimate.
     </p>
-    <div class="p-8 border-2 border-dashed border-gray-200 rounded-2xl bg-gray-50 text-center">
+    <div class="p-8 border-2 border-dashed border-gray-200 rounded-2xl bg-gray-100 text-center">
       <p class="font-bold text-gray-400 italic">
         Online Form Integrating Soon
       </p>
