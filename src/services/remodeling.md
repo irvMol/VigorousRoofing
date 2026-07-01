@@ -14,7 +14,7 @@ permalink: /services/remodeling/
 
 We provide high-quality remodeling and flooring services designed to transform residential and commercial spaces throughout the Dallas–Fort Worth area.
 
-## Our team specializes in:
+**Our team specializes in**
 
 - Kitchen remodeling
 - Bathroom remodeling
@@ -22,6 +22,6 @@ We provide high-quality remodeling and flooring services designed to transform r
 - Attic foam insulation
 - Interior improvements
 
-## Built for Comfort and Value
+**Built for Comfort and Value**
 
 Whether you're updating a single room or planning a larger renovation, our team focuses on quality craftsmanship, durable materials, and attention to detail to ensure long-lasting results.

@@ -14,7 +14,7 @@ permalink: /services/storm-damage/
 
 We provide responsive storm damage roofing services for homeowners and property owners dealing with hail, wind, and severe weather damage.
 
-## Our Team Specializes In
+**Our Team Specializes In**
 
 - Storm damage inspections
 - Emergency roof repairs
@@ -22,6 +22,6 @@ We provide responsive storm damage roofing services for homeowners and property 
 - Wind damage repair
 - Insurance claim assistance
 
-## Fast, Reliable Roof Restoration
+**Fast, Reliable Roof Restoration**
 
 Our team works quickly to assess damage, prevent further issues, and restore your roofing system with quality workmanship and dependable materials designed for long-term protection.

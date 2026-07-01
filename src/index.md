@@ -75,31 +75,20 @@ permalink: /
 </div>
 
 <!-- 2. Conversion Section -->
-<!-- 2. Conversion Section -->
 <section class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-stretch">
-
-  <!-- Estimate Card -->
-  <div class="bg-gray-50 p-12 rounded-3xl text-black shadow-2xl flex flex-col justify-center">
-    <h2 class="text-3xl font-black mb-4 text-gray-900 uppercase tracking-tighter">
+<div class="bg-brand-dark-grey p-12 rounded-3xl shadow-2xl flex flex-col justify-center">
+    <h2 class="text-3xl font-black mb-4 text-gray-200 uppercase tracking-tighter">
       Quick Estimate
     </h2>
-    <p class="text-gray-500 mb-8">
+    <p class="text-gray-400 mb-8">
       Call us for an estimate.
     </p>
-    <div class="p-8 border-2 border-dashed border-gray-200 rounded-2xl bg-gray-100 text-center">
-      <p class="font-bold text-gray-400 italic">
-        Online Form Integrating Soon
-      </p>
-<a
-        href="tel:2147087370"
-        class="inline-block mt-4 text-brand-red font-black hover:underline text-lg underline-offset-4"
-      >        (214) 708-7370
-      </a>
+    <div class="p-8 border-1 border-dashed border-gray-200 rounded-2xl bg-gray-100 text-center">
+{% include "partials/contact-form.njk", {
+  compact: true
+} %}
     </div>
-
   </div>
-
-  <!-- Service Area Card -->
   <div class="bg-brand-dark-grey rounded-3xl shadow-2xl overflow-hidden relative min-h-[450px]">
     <div class="h-full flex items-center justify-center p-4">
       <img

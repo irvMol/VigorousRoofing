@@ -14,7 +14,7 @@ permalink: /services/concrete/
 
 We provide professional concrete services for projects ranging from small residential improvements to larger commercial applications.
 
-## Our team specializes in:
+**Our team specializes in:**
 
 - Concrete driveways
 - Sidewalks and walkways
@@ -22,6 +22,6 @@ We provide professional concrete services for projects ranging from small reside
 - Concrete repairs
 - Concrete pads and foundations
 
-## Built for Strength and Longevity
+**Built for Strength and Longevity**
 
 Our concrete work is designed to provide long-term durability, functionality, and a clean finished appearance that adds value to your property.

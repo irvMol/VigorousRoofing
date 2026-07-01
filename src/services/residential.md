@@ -14,7 +14,7 @@ permalink: /services/residential/
 
 We provide dependable residential roofing services for homeowners looking to protect and improve their property.
 
-## Our team specializes in:
+**Our team specializes in:**
 
 - Roof replacements
 - Leak repairs
@@ -22,6 +22,6 @@ We provide dependable residential roofing services for homeowners looking to pro
 - Storm damage restoration
 - Preventative maintenance
 
-## Built for Long-Term Protection
+**Built for Long-Term Protection**
 
 Every roofing project is completed with careful attention to detail, dependable workmanship, and materials designed for long-term durability.

@@ -14,7 +14,7 @@ permalink: /services/fencing/
 
 We provide professional fencing services for homeowners and businesses looking to enhance security, privacy, and property appearance.
 
-## Our team specializes in:
+**Our team specializes in:**
 
 - Fence installation
 - Fence replacement
@@ -22,6 +22,6 @@ We provide professional fencing services for homeowners and businesses looking t
 - Wood fencing
 - Privacy fencing
 
-## Built for Security and Durability
+**Built for Security and Durability**
 
 Every fencing project is completed with quality materials and dependable workmanship to ensure your fence stands up to Texas weather and daily use for years to come.
