@@ -81,7 +81,7 @@ permalink: /
       Quick Estimate
     </h2>
     <p class="text-gray-400 mb-8">
-      Call us for an estimate.
+      Call or message us with your project details
     </p>
     <div class="p-8 border-1 border-dashed border-gray-200 rounded-2xl bg-gray-100 text-center">
 {% include "partials/contact-form.njk", {

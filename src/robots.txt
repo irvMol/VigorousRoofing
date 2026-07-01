@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin
+
+# Allow everything else
+Allow: /
+
+Sitemap: https://vigorousroofing.com/sitemap.xml
