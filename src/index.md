@@ -90,12 +90,21 @@ templateEngineOverride: njk
     </div>
   </div>
   <div class="bg-brand-dark-grey rounded-3xl shadow-2xl overflow-hidden relative min-h-[450px]">
-    <div class="h-full flex items-center justify-center p-4">
-      <img
-        src="/assets/images/map.png"
-        alt="Dallas Fort Worth Service Area"
-        class="max-w-full max-h-full object-contain rounded-2xl"
-      />
-    </div>
+  <div class="h-full flex items-center justify-center p-4">
+    <button
+      class="group text-left lightbox-trigger focus:outline-none w-full h-full"
+      data-full="/assets/images/map.png"
+      data-alt="Dallas Fort Worth Service Area"
+    >
+      <div class="max-w-full max-h-full object-contain rounded-2xl cursor-pointer">
+        {% image
+          "/assets/images/map.png",
+          "Dallas Fort Worth Service Area",
+          "(max-width: 768px) 100vw, 33vw",
+          "w-full aspect-square object-cover transition duration-500 group-hover:scale-105"
+        %}
+      </div>
+    </button>
   </div>
+</div>
 </section>

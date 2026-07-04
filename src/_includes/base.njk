@@ -100,6 +100,17 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </footer>
     </div>
-    <script src="/assets/js/lightbox.js" defer></script>
+<!-- Lightbox Modal -->
+<div id="lightbox" class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/90 opacity-0 transition-opacity duration-300 p-4">
+  <button id="lightbox-close" class="absolute top-6 right-6 text-white text-4xl leading-none hover:text-brand-red transition-colors" aria-label="Close">
+    &times;
+  </button>
+  <figure class="max-w-4xl max-h-full flex flex-col items-center">
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl">
+    <figcaption id="lightbox-caption" class="text-gray-300 text-sm mt-4 text-center"></figcaption>
+  </figure>
+</div>
+
+<script src="/assets/js/lightbox.js" defer></script>
 </body>
 </html>
