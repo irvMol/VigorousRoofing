@@ -1,3 +1,7 @@
 {
-  "showForm": false
+  "showForm": false,
+  "description": "Professional roofing and construction services in Dallas Fort Worth Texas and surrounding areas.",
+  "logo": "/assets/images/logo/logo.png",
+  "logoAlt": "Vigorous Roofing Logo",
+  "siteUrl": "https://vigorousroofing.com"
 }

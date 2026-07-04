@@ -6,6 +6,7 @@ hero_subtitle: Expert roofing and storm restoration services for homeowners and 
 hero_cta_text: Get Your Free Estimate
 cta_link: 'tel:2147087370'
 permalink: /
+templateEngineOverride: njk
 ---
 
 <!-- 1. Services Section -->
@@ -84,9 +85,8 @@ permalink: /
       Call or message us with your project details
     </p>
     <div class="p-8 border-1 border-dashed border-gray-200 rounded-2xl bg-gray-100 text-center">
-{% include "partials/contact-form.njk", {
-  compact: true
-} %}
+  {% set compact = true %}
+  {% include "partials/contact-form.njk" %}
     </div>
   </div>
   <div class="bg-brand-dark-grey rounded-3xl shadow-2xl overflow-hidden relative min-h-[450px]">

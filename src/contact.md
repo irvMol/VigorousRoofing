@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 title: Contact Us | Vigorous Roofing & Construction
+templateEngineOverride: njk
 ---
 
 <section class="bg-brand-dark-grey/90 py-20 px-4">
@@ -22,6 +23,7 @@ title: Contact Us | Vigorous Roofing & Construction
     (214) 708-7370
   </a>
 </div>
+{% set compact = false %}
 {% include "partials/contact-form.njk" %}
 </div>
 </section>
