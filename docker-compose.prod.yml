@@ -2,7 +2,7 @@ services:
   caddy:
     volumes:
       - ./Caddyfile.prod:/etc/caddy/Caddyfile
-      - site_output:/srv/vigorous/_site    # read from same named volume
+      - site_output:/srv/site/_site    # read from same named volume
     ports:
       - "443:443"
 

@@ -1,9 +1,6 @@
 ---
 layout: gallery.njk
-
-title: Roofing Project Gallery
-
-description: Explore recent roofing and construction projects completed across Dallas–Fort Worth.
-
+title: Roofing & Construction Project Gallery
+description: Photos of recent roofing and construction projects completed by Vigorous Roofing & Construction across Dallas-Fort Worth.
 permalink: /gallery/
 ---

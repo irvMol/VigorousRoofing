@@ -1,7 +1,14 @@
 {
   "showForm": false,
-  "description": "Professional roofing and construction services in Dallas Fort Worth Texas and surrounding areas.",
+  "title": "Vigorous Roofing & Construction",
+  "tagline": "Roofing & Construction in Dallas-Fort Worth, TX",
+  "description": "Vigorous Roofing & Construction is a Dallas-Fort Worth contractor offering residential and commercial roofing, storm damage repair, remodeling, fencing and concrete. Free estimates.",
   "logo": "/assets/images/logo/logo.png",
-  "logoAlt": "Vigorous Roofing Logo",
-  "siteUrl": "https://vigorousroofing.com"
+  "logoAlt": "Vigorous Roofing & Construction logo",
+  "siteUrl": "https://vigorousroofing.com",
+  "heroStyle": "video",
+  "heroImageAlt": "",
+  "heroImage": "",
+  "servicesStyle": "grid",
+  "ogImage": "/assets/images/og-image.jpg"
 }

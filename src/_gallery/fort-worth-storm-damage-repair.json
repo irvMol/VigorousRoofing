@@ -1,0 +1,14 @@
+{
+  "title": "Fort Worth Storm Damage Repair",
+  "date": "2026-07-05",
+  "category": "Storm Damage",
+  "location": "Fort Worth, Texas",
+  "cover": "/assets/images/residential-2.jpg",
+  "media": [
+    {
+      "type": "image",
+      "image": "/assets/images/residential-2.jpg",
+      "alt": "Storm damage roofing repair in Fort Worth Texas"
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+---
+layout: base.njk
+templateEngineOverride: njk
+title: Gallery | {{ business.name }}
+---
+<section class="relative overflow-hidden bg-[#2f2f2f] text-white">
+    <div class="max-w-5xl mx-auto px-6 py-24 md:py-32 text-center">
+        <p class="uppercase tracking-[0.15em] text-xs text-brand-primary font-semibold mb-4">
+            {{ business.serviceArea }} Projects
+        </p>
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6">
+            {{ title or "Our Work" }}
+        </h1>
+        <p class="max-w-2xl mx-auto text-base md:text-lg text-gray-300 leading-relaxed">
+            {{ description or "" }}
+        </p>
+    </div>
+</section>
+<section class="bg-white py-16 border-t border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+        <p class="text-gray-600 leading-relaxed text-base md:text-lg">
+            A selection of recent projects completed across {{ business.serviceArea }}.
+        </p>
+    </div>
+</section>
+<section class="bg-[#f7f7f7] py-20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for project in gallery %}
+            <button class="group text-left project-trigger focus:outline-none" data-project="{{ loop.index0 }}">
+                <div class="relative overflow-hidden rounded-2xl bg-gray-200 aspect-square cursor-pointer">
+                    {% image project.cover, project.title, "(max-width: 768px) 100vw, 33vw", "w-full h-full object-cover transition duration-500 group-hover:scale-105" %}
+                {% if project.media[0].type == "video" %}
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                {% endif %}
+                {% if project.media.length > 1 %}
+                    <span class="absolute top-3 right-3 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                        {{ project.media.length }} photos
+                    </span>
+                {% endif %}
+                </div>
+                <div class="pt-4">
+                    <p class="text-xs uppercase tracking-[0.12em] text-brand-primary font-semibold mb-1">{{ project.category }}</p>
+                    <p class="text-sm text-gray-500">{{ project.location }}</p>
+                </div>
+            </button>
+        {% endfor %}
+        </div>
+    </div>
+</section>
+<div id="project-modal" class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/90 p-4">
+    <button id="project-modal-close" class="absolute top-6 right-6 text-white/70 hover:text-white p-2 focus:outline-none" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
+    <button id="project-modal-prev" class="absolute left-4 md:left-8 text-white/70 hover:text-white p-2 focus:outline-none" aria-label="Previous">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+    </button>
+    <button id="project-modal-next" class="absolute right-4 md:right-8 text-white/70 hover:text-white p-2 focus:outline-none" aria-label="Next">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+    </button>
+    <div class="w-full max-w-4xl flex flex-col items-center">
+        <video id="project-modal-video" controls playsinline class="w-full rounded-2xl shadow-2xl max-h-[75vh] hidden"></video>
+        <img id="project-modal-image" class="w-full rounded-2xl shadow-2xl max-h-[75vh] object-contain hidden" src="" alt="">
+        <div class="mt-4 text-center">
+            <p id="project-modal-title" class="text-white font-bold text-lg"></p>
+            <p id="project-modal-counter" class="text-gray-400 text-sm mt-1"></p>
+        </div>
+    </div>
+</div>
+<script type="application/json" id="gallery-data">{{ gallery | dump | safe }}</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const projects = JSON.parse(document.getElementById("gallery-data").textContent);
+  const modal = document.getElementById("project-modal");
+  const video = document.getElementById("project-modal-video");
+  const image = document.getElementById("project-modal-image");
+  const title = document.getElementById("project-modal-title");
+  const counter = document.getElementById("project-modal-counter");
+  const prevBtn = document.getElementById("project-modal-prev");
+  const nextBtn = document.getElementById("project-modal-next");
+  const closeBtn = document.getElementById("project-modal-close");
+  let currentProject = null;
+  let currentIndex = 0;
+  function render() {
+    const project = projects[currentProject];
+    const item = project.media[currentIndex];
+    video.pause();
+    if (item.type === "video") {
+      video.src = item.src;
+      video.poster = item.poster || "";
+      video.classList.remove("hidden");
+      image.classList.add("hidden");
+    } else {
+      image.src = item.image;
+      image.alt = item.alt || project.title;
+      image.classList.remove("hidden");
+      video.classList.add("hidden");
+    }
+    title.textContent = project.title;
+    counter.textContent = project.media.length > 1 ? (currentIndex + 1) + " of " + project.media.length : "";
+    const multi = project.media.length > 1;
+    prevBtn.classList.toggle("hidden", !multi);
+    nextBtn.classList.toggle("hidden", !multi);
+  }
+  function open(projectIndex) {
+    currentProject = projectIndex;
+    currentIndex = 0;
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    render();
+  }
+  function close() {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    video.pause();
+    video.src = "";
+  }
+  document.querySelectorAll(".project-trigger").forEach(btn => {
+    btn.addEventListener("click", () => open(parseInt(btn.dataset.project, 10)));
+  });
+  prevBtn.addEventListener("click", () => {
+    const project = projects[currentProject];
+    currentIndex = (currentIndex - 1 + project.media.length) % project.media.length;
+    render();
+  });
+  nextBtn.addEventListener("click", () => {
+    const project = projects[currentProject];
+    currentIndex = (currentIndex + 1) % project.media.length;
+    render();
+  });
+  closeBtn.addEventListener("click", close);
+  document.addEventListener("keydown", (e) => {
+    if (modal.classList.contains("hidden")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") prevBtn.click();
+    if (e.key === "ArrowRight") nextBtn.click();
+  });
+});
+</script>
+<section class="bg-brand-primary text-white py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-black leading-tight mb-6">
+            Need Our Services?
+        </h2>
+        <p class="max-w-2xl mx-auto text-base md:text-lg text-white/85 leading-relaxed mb-10">
+            Contact {{ business.name }} today for a free inspection and estimate.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact/"
+                class="inline-flex items-center justify-center bg-white text-brand-primary font-black py-4 px-8 rounded-full hover:bg-gray-100 transition">
+                Request a Free Estimate
+            </a>
+            <a href="tel:{{ business.phone }}"
+                class="inline-flex items-center justify-center border-2 border-white/40 text-white font-bold py-4 px-8 rounded-full hover:bg-white/10 transition">
+                {{ business.phoneDisplay }}
+            </a>
+        </div>
+    </div>
+</section>

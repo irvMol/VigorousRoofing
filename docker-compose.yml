@@ -1,22 +1,28 @@
+name: vigorous
+
 services:
   eleventy:
     build:
       context: .
       dockerfile: Dockerfile
+    env_file:
+      - .env
     volumes:
       - .:/app
       - node_modules:/app/node_modules
-      - site_output:/app/_site    # write built site here
-      - eleventy_cache:/app/.cache      # persistent cache volume
+      - site_output:/app/_site
+      - eleventy_cache:/app/.cache
     working_dir: /app
     networks:
       - web
 
   caddy:
     image: caddy:latest
+    env_file:
+      - .env
     volumes:
       - ./Caddyfile.dev:/etc/caddy/Caddyfile
-      - site_output:/srv/vigorous/_site    # read from same named volume
+      - site_output:/srv/site/_site
       - caddy_data:/data
       - caddy_config:/config
     ports:
@@ -30,7 +36,7 @@ services:
       dockerfile: Dockerfile.oauth
     environment:
       NODE_ENV: production
-      ORIGIN: https://vigorousroofing.com
+      ORIGIN: ${SITE_ORIGIN}
       GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID}
       GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET}
     networks:

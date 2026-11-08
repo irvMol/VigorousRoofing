@@ -1,0 +1,188 @@
+local_backend: true
+
+backend:
+  name: github
+  repo: irvMol/VigorousRoofing
+  branch: main
+  base_url: https://vigorousroofing.com
+  auth_endpoint: /api/auth
+
+# # Cloudinary media library — images never touch your VPS
+# media_library:
+#   name: cloudinary
+#   config:
+#     cloud_name: CLOUDINARY_CLOUD_NAME
+#     api_key: CLOUDINARY_API_KEY
+
+# Fallback local media folder (used if cloudinary is not configured)
+media_folder: src/assets/images
+public_folder: /assets/images
+
+# Site URL for previews
+site_url: https://vigorousroofing.com
+display_url: https://vigorousroofing.com
+
+collections:
+  # ── Service Pages ──────────────────────────────────────
+  - name: services
+    label: Service Pages
+    folder: src/services
+    create: false
+    slug: '{{slug}}'
+    fields:
+      - { label: Layout, name: layout, widget: hidden, default: service.njk }
+      - { label: Page Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text }
+      - label: SEO Title
+        name: seoTitle
+        widget: string
+        required: false
+        hint: 'The business name is added automatically. Keep under ~45 characters.'
+      - label: Hero Image
+        name: heroImage
+        widget: image
+        required: false
+        hint: 'Large background image for the top of the page'
+      - label: Service Image
+        name: serviceImage
+        widget: image
+        required: false
+        hint: 'Photo shown in the main content section'
+      - { label: Permalink, name: permalink, widget: hidden }
+      - label: Content
+        name: body
+        widget: markdown
+        hint:
+          'Main service description — supports bullet points and headings'
+
+          # ── Gallery Projects ───────────────────────────────────
+  - name: gallery
+    label: Gallery Projects
+    label_singular: Project
+    folder: src/_gallery
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    identifier_field: title
+    summary: '{{title}} — {{location}}'
+    sortable_fields: ['date', 'title']
+    editor: { preview: false }
+    media_folder: /src/assets/images/gallery
+    public_folder: /assets/images/gallery
+    fields:
+      - {
+          label: Project Name,
+          name: title,
+          widget: string,
+          hint: 'e.g. Dallas Shingle Roof Replacement',
+        }
+      - label: Date
+        name: date
+        widget: datetime
+        date_format: 'MM/DD/YYYY'
+        time_format: false
+        format: 'YYYY-MM-DD'
+        hint: 'Newest projects show first in the gallery'
+      - {
+          label: Category,
+          name: category,
+          widget: string,
+          hint: 'e.g. Residential Roofing, Gutters, Repairs',
+        }
+      - {
+          label: Location,
+          name: location,
+          widget: string,
+          hint: 'e.g. Plano, Texas',
+        }
+      - label: Cover Photo
+        name: cover
+        widget: image
+        required: false
+        hint: 'Shown on the gallery grid. Leave empty to use the first photo below.'
+      - label: Photos & Videos
+        name: media
+        widget: list
+        label_singular: item
+        summary: '{{fields.alt}}'
+        types:
+          - label: Photo
+            name: image
+            widget: object
+            summary: '{{fields.alt}}'
+            fields:
+              - { label: Photo, name: image, widget: image }
+              - {
+                  label: Description,
+                  name: alt,
+                  widget: string,
+                  hint: 'Describe the photo, e.g. New gutters along the roofline',
+                }
+          - label: Video
+            name: video
+            widget: object
+            summary: '{{fields.alt}}'
+            fields:
+              - {
+                  label: Video File,
+                  name: src,
+                  widget: file,
+                  hint: 'MP4 under 20MB. Larger videos should be sent to your web developer.',
+                }
+              - {
+                  label: Poster Image,
+                  name: poster,
+                  widget: image,
+                  required: false,
+                }
+              - { label: Description, name: alt, widget: string }
+
+  # ── Site Settings ──────────────────────────────────────
+  - name: settings
+    label: Site Settings
+    files:
+      - label: Business Info
+        name: business
+        file: src/_data/business.json
+        fields:
+          - { label: Business Name, name: name, widget: string }
+          - { label: Phone Number, name: phone, widget: string }
+          - {
+              label: Phone (Display Format),
+              name: phoneDisplay,
+              widget: string,
+            }
+          - { label: Email, name: email, widget: string }
+          - { label: Address, name: address, widget: string }
+          - { label: Service Area, name: serviceArea, widget: string }
+          - label: Business Hours
+            name: openingHours
+            widget: string
+            hint: 'Schema format, e.g. Mo-Fr 08:00-18:00, Sa 09:00-15:00'
+          - {
+              label: Facebook URL,
+              name: facebook,
+              widget: string,
+              required: false,
+            }
+          - {
+              label: WhatsApp Number,
+              name: whatsapp,
+              widget: string,
+              required: false,
+            }
+          - {
+              label: Instagram URL,
+              name: instagram,
+              widget: string,
+              required: false,
+            }
+          - label: Stats
+            name: stats
+            widget: object
+            required: false
+            fields:
+              - { label: Years in Business, name: years, widget: string }
+              - { label: Jobs Completed, name: jobs, widget: string }
