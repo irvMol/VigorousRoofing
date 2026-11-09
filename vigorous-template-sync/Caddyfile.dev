@@ -1,6 +1,0 @@
-:80 {
-    root * /srv/site/_site
-    file_server
-
-    try_files {path} {path}.html {path}/
-}

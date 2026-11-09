@@ -1,13 +1,10 @@
 ---
 layout: service.njk
-
 title: Commercial Roofing
-
-description: Reliable commercial roofing solutions designed to protect businesses, warehouses, and commercial properties with long-lasting performance.
+seoTitle: Commercial Roofing in Dallas-Fort Worth, TX
+description: Commercial roof replacement, TPO, modified bitumen and flat roofing for Dallas-Fort Worth businesses and property owners. Free estimates.
 heroImage: /assets/images/commercial-hero.jpg
-
 serviceImage: /assets/images/commercial-detail.jpg
-
 permalink: /services/commercial/
 ---
 

@@ -1,14 +1,10 @@
 ---
 layout: service.njk
-
 title: Fencing
-
-description: Durable fencing solutions that provide security, privacy, and curb appeal for your property.
-
+seoTitle: Fence Installation in Dallas-Fort Worth, TX
+description: Wood and privacy fence installation, replacement and removal for Dallas-Fort Worth homes and businesses. Built to stand up to Texas weather. Free estimates.
 heroImage: /assets/images/fencing-hero.jpg
-
 serviceImage: /assets/images/fencing-detail.jpg
-
 permalink: /services/fencing/
 ---
 

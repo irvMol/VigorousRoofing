@@ -1,14 +1,10 @@
 ---
 layout: service.njk
-
 title: Residential Roofing
-
-description: High-quality residential roofing solutions designed for durability, protection, and curb appeal.
-
+seoTitle: Residential Roofing in Dallas-Fort Worth, TX
+description: Roof replacement, leak repair and shingle installation for Dallas-Fort Worth homes. Durable roofs built for Texas hail and heat. Free estimates.
 heroImage: /assets/images/residential-hero.jpg
-
 serviceImage: /assets/images/residential-detail.jpg
-
 permalink: /services/residential/
 ---
 

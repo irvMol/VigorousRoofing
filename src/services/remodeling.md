@@ -1,14 +1,10 @@
 ---
 layout: service.njk
-
 title: Remodeling & Flooring
-
-description: Professional remodeling and flooring services that improve comfort, functionality, and property value.
-
+seoTitle: Remodeling & Flooring in Dallas-Fort Worth
+description: Kitchen and bathroom remodeling, flooring installation and attic foam insulation for Dallas-Fort Worth homes and businesses. Free estimates.
 heroImage: /assets/images/remodel-hero.jpg
-
 serviceImage: /assets/images/remodel-detail.jpg
-
 permalink: /services/remodeling/
 ---
 

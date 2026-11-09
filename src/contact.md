@@ -17,6 +17,9 @@ Se Habla Español
 <p class="text-gray-300 mt-4 text-lg">
 Serving {{ business.serviceArea }} homeowners and businesses with dependable roofing and construction services.
 </p>
+{% if business.hoursDisplay %}
+<p class="text-gray-400 mt-2 text-sm">Hours: {{ business.hoursDisplay }}</p>
+{% endif %}
 <a href="tel:{{ business.phone }}" class="inline-block mt-6 text-brand-primary font-black text-2xl hover:underline">
 {{ business.phoneDisplay }}
 </a>

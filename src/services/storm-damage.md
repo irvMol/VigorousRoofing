@@ -1,14 +1,10 @@
 ---
 layout: service.njk
-
-title: Residential Storm damage Repair
-
-description: Fast and dependable storm damage roofing services to help restore and protect your property after severe weather.
-
+title: Storm Damage Roof Repair
+seoTitle: Storm & Hail Damage Roof Repair in DFW
+description: Hail and wind damage inspections, emergency roof repairs and insurance claim assistance across Dallas-Fort Worth. Fast response after severe weather.
 heroImage: /assets/images/storm-damage-hero.jpg
-
 serviceImage: /assets/images/storm-damage-detail.jpg
-
 permalink: /services/storm-damage/
 ---
 

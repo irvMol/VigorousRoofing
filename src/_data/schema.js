@@ -2,18 +2,22 @@ const business = require('./business.json');
 const site = require('./site.json');
 module.exports = {
   '@context': 'https://schema.org',
-  '@type': 'RoofingContractor',
+  '@type': ['RoofingContractor', 'GeneralContractor'],
   '@id': `${site.siteUrl}/#business`,
   name: business.name,
   url: `${site.siteUrl}/`,
   logo: `${site.siteUrl}${site.logo}`,
   image: `${site.siteUrl}${site.ogImage}`,
   description: site.description,
-  telephone: `+1-${business.phone}`,
+  telephone: `+1-${business.phone.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}`,
   email: business.email,
-  openingHours: business.openingHours,
+  openingHours: business.openingHours
+    ? business.openingHours.split(',').map((s) => s.trim())
+    : undefined,
   address: {
     '@type': 'PostalAddress',
+    ...(business.city && { addressLocality: business.city }),
+    ...(business.address && { streetAddress: business.address }),
     addressRegion: 'TX',
     addressCountry: 'US',
   },

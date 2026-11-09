@@ -35,3 +35,6 @@ test-results/
 
 # Project Management
 TODO.md
+# Local deliverables
+*.zip
+vigorous-template-sync/

@@ -1,7 +1,8 @@
 ---
+hero_eyebrow: Quality Above All Else
 description: 'Vigorous Roofing & Construction serves Dallas-Fort Worth homes and businesses: roof replacement, storm and hail repair, commercial roofing, remodeling, fencing and concrete.'
 layout: hero.njk
-hero_title: Quality Above All Else
+hero_title: Roofing & Construction in Dallas-Fort Worth
 hero_subtitle: Expert roofing and storm restoration services for homeowners and businesses across the
 hero_cta_text: Get Your Free Estimate
 permalink: /
@@ -51,3 +52,4 @@ data-alt="{{ business.serviceArea }} Service Area"
 </div>
 </div>
 </section>
+{% include "partials/areas-served.njk" %}

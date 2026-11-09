@@ -1,14 +1,10 @@
 ---
 layout: service.njk
-
 title: Concrete Services
-
-description: Reliable concrete installation and repair services for residential and commercial properties.
-
+seoTitle: Concrete Driveways & Patios in Dallas-Fort Worth
+description: Concrete driveways, patios, sidewalks, pads and repairs for Dallas-Fort Worth homes and businesses. Built for strength and long life. Free estimates.
 heroImage: /assets/images/concrete-hero.jpg
-
 serviceImage: /assets/images/concrete-detail.jpg
-
 permalink: /services/concrete/
 ---
 
