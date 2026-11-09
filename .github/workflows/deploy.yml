@@ -33,3 +33,4 @@ jobs:
             echo "=== Disk space remaining ==="
             df -h /
             docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+            docker compose -f docker-compose.yml -f docker-compose.prod.yml restart caddy
