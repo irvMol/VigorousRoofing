@@ -1,5 +1,3 @@
-local_backend: true
-
 backend:
   name: github
   repo: irvMol/VigorousRoofing
@@ -155,10 +153,28 @@ collections:
               widget: string,
             }
           - { label: Email, name: email, widget: string }
-          - { label: Street Address, name: address, widget: string, required: false, hint: 'Leave empty if you do not want a street address shown to Google' }
-          - { label: City, name: city, widget: string, required: false, hint: 'Home base city, e.g. Dallas' }
+          - {
+              label: Street Address,
+              name: address,
+              widget: string,
+              required: false,
+              hint: 'Leave empty if you do not want a street address shown to Google',
+            }
+          - {
+              label: City,
+              name: city,
+              widget: string,
+              required: false,
+              hint: 'Home base city, e.g. Dallas',
+            }
           - { label: Service Area, name: serviceArea, widget: string }
-          - { label: Cities Served, name: areaServed, widget: list, required: false, hint: 'One city per entry. Used for Google and the Areas We Serve list.' }
+          - {
+              label: Cities Served,
+              name: areaServed,
+              widget: list,
+              required: false,
+              hint: 'One city per entry. Used for Google and the Areas We Serve list.',
+            }
           - label: Business Hours
             name: openingHours
             widget: string
